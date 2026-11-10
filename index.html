@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Maqbol'm ❤️</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Trebuchet MS', cursive;
+  background: linear-gradient(135deg,#ff758c,#ffb6c1,#d8a4ff);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  position: relative;
+}
+
+h1 {
+  font-size: clamp(2rem,8vw,3.5rem);
+  text-shadow: 0 3px 15px #d63384;
+}
+
+h2 { font-size: 2rem; }
+
+p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+button {
+  background: white;
+  color: #ff4d79;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 28px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 12px;
+  box-shadow: 0 5px 20px #a8326860;
+  transition: .3s;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+.hidden { display: none !important; }
+
+.card {
+  background: #ffffffeb;
+  color: #d63384;
+  border-radius: 25px;
+  padding: 28px;
+  width: min(92%, 430px);
+  box-shadow: 0 10px 35px #8d276b50;
+  animation: appear 1s;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gift {
+  font-size: 100px;
+  cursor: pointer;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-15px); }
+}
+
+.cake {
+  font-size: 100px;
+  cursor: pointer;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  to { filter: drop-shadow(0 0 20px white); }
+}
+
+.heart {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  animation: float 6s linear forwards;
+  z-index: 5;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.reason {
+  background: white;
+  color: #e84379;
+  padding: 18px;
+  border-radius: 18px;
+  margin: 9px;
+  width: min(90%,350px);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#letter {
+  white-space: pre-line;
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  animation: sparkle 2s forwards;
+  z-index: 10;
+}
+
+@keyframes sparkle {
+  to {
+    transform: translateY(-150px) scale(2);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<section id="welcome">
+  <div class="card">
+    <h1>Hey My Love! 💗</h1>
+    <p>
+      Emran et made a little surprise
+      for the most special girl... 
+    </p>
+    <div class="gift" onclick="openGift()">🎁</div>
+    <button onclick="openGift()"> OPEN YOUR GIFT 💝</button>
+  </div>
+</section>
+
+<!-- BIRTHDAY -->
+<section id="birthday" class="hidden">
+  <h1>HAPPY BIRTHDAY! </h1>
+  <h2>My beautiful Maroy 💕</h2>
+  <div class="cake" onclick="blow()">🎂</div>
+  <p id="candleText">
+    Tap the cake to blow out your candles! 🕯️
+  </p>
+  <button onclick="next('birthday','letterSection')">
+    A MESSAGE FOR YOU 💌
+  </button>
+</section>
+
+<!-- LOVE LETTER -->
+<section id="letterSection" class="hidden">
+  <div class="card">
+    <h2>To You Maroy'm 💌</h2>
+    <p id="letter"></p>
+    <button onclick="next('letterSection','reasons')">
+      Click Again ❤️
+    </button>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section id="reasons" class="hidden">
+  <h1>Why I Love You 💗</h1>
+  <p>Tap each little surprise...</p>
+
+  <div class="reason" onclick="reveal(this,'Your.. Cutness, style, smile, eyes, voice, caring 🥹')">
+    💗 Reason No. 1
+  </div>
+
+  <div class="reason" onclick="reveal(this,'Your.. Personality, kindness, hugs, jokes, patience ✨')">
+    💗 Reason No. 2
+  </div>
+
+  <div class="reason" onclick="reveal(this,'Your.. Texts, calls, reactions, excitement, trust ❤️')">
+    💗 Reason No. 3
+  </div>
+
+  <div class="reason" onclick="reveal(this,'Your.. Respect, heart, compliments, loyalty, soul 🤭')">
+    💗 Reason No. 4
+  </div>
+
+  <button onclick="next('reasons','finale')">
+    ONE LAST SURPRISE 🎆
+  </button>
+</section>
+
+<!-- FINALE -->
+<section id="finale" class="hidden">
+  <h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+  <h2>Omrm ❤️</h2>
+
+  <div style="font-size:75px">💐💖🥹</div>
+
+  <div class="card">
+    <h2>𝓜y 𝓛ove, 𝓜y 𝓦orld 💕</h2>
+    <p>
+      On your special day, I wish you endless happiness,
+      beautiful memories, success and a lifetime of smiles.
+      May every dream in your heart come true.
+    </p>
+  </div>
+</section>
+
+<script>
+let typed = false;
+let candlesOut = false;
+
+function openGift() {
+  next('welcome','birthday');
+  hearts();
+}
+
+function next(oldId,newId) {
+  document.getElementById(oldId).classList.add('hidden');
+  document.getElementById(newId).classList.remove('hidden');
+
+  if(newId === 'letterSection' && !typed) {
+    typed = true;
+    typeLetter();
+  }
+
+  hearts();
+  window.scrollTo(0,0);
+}
+
+function blow() {
+  if(candlesOut) return;
+  candlesOut = true;
+
+  document.querySelector('.cake').textContent = '🎂💨';
+  document.getElementById('candleText').textContent =
+    'Afrin MWAH 🥹❤️';
+
+  celebrate();
+}
+
+const message =
+`My dearest Maroy ❤️
+
+Happy Birthday to the girl who makes my world more beautiful.
+
+Dostt drm.. Andaza tamam sanya hay k zendagi krdm..
+
+Dosst drm.. Andaza tamam kalimati k ba ham harf zadim..
+
+Dostt drm.. Andaza star hay asman..
+
+Dostt drm.. Andaza tamam bi nihayat hay dunya..
+
+Awalin kasi bodi k qalbm waqan ashiq esh shd.. Awalin kasi bodi k hmryt with tamam wojodm khandidm.. Awalin kasi bodi k when hmryt bodm hrs msl min guzasht..
+
+Tura d qalbm mikarm k hamisha bimani wa risha kni.. Tu ashiqana tarin majari omr em asti
+
+Tu behtarin wa precious tarin gift of allah asti to me shkr k drm et ..
+
+Ashiq khanda hayt ashiq chishm hayt ashiq lab hayt ashiq mo hayt ashiq bodn et ma ashiq har chizi k d zehn miyaya ashiq esh astm..
+
+Ma har ruz wa har lahza beshtar ashiqt mishm awalin bar k didmt qalbm yak qesm dga aw shd qesmi k again ashiqt shdm awalin bar k bosidm az lab hayt behtarin hes dunya bod..
+
+Happy Birthday Mohabatm.. 
+May you live 1000 years and forever kinar ham e ruz k Maroy ma b dunya amada ra tajlil knim 🥹❤️ 
+
+If your smiling now..
+Mwah dostt drm khili zyad 🥹❤️😂`;
+
+function typeLetter() {
+  let i = 0;
+  const target = document.getElementById('letter');
+
+  function write() {
+    if(i < message.length) {
+      target.textContent += message.charAt(i);
+      i++;
+      setTimeout(write,35);
+    }
+  }
+
+  write();
+}
+
+function reveal(element,text) {
+  element.textContent = text;
+  celebrate();
+}
+
+function hearts() {
+  for(let i=0;i<15;i++) {
+    setTimeout(() => {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.textContent = ['💖','💕','❤️','💗','🌸'][Math.floor(Math.random()*5)];
+      h.style.left = Math.random()*100+'vw';
+      h.style.fontSize = (20+Math.random()*25)+'px';
+      h.style.animationDuration = (4+Math.random()*4)+'s';
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),8000);
+    },i*150);
+  }
+}
+
+function celebrate() {
+  for(let i=0;i<35;i++) {
+    const s = document.createElement('div');
+    s.className='sparkle';
+    s.textContent=['✨','💖','🎉','🌸','💕'][Math.floor(Math.random()*5)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.top=(30+Math.random()*60)+'vh';
+    s.style.fontSize=(20+Math.random()*25)+'px';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),2000);
+  }
+  hearts();
+}
+
+setInterval(() => {
+  const h=document.createElement('div');
+  h.className='heart';
+  h.textContent='💗';
+  h.style.left=Math.random()*100+'vw';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7000);
+},900);
+</script>
+
+</body>
+</html>
